@@ -1,0 +1,19 @@
+{
+  "/test/*": {
+    "target": "https://any-url.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/test": ""
+    },
+    "logLevel": "debug"
+  }
+}
+
+// Add "proxyConfig": "proxy.conf.json" to angular.json file
+//"serve": {
+//"builder": "@angular-devkit/build-angular:dev-server",
+//"options": {
+//"browserTarget": "manned-vm:build",
+//"proxyConfig": "proxy.conf.json"
+//},

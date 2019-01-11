@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+
+@mixin own-components-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+
+  .vm-back-light {
+    background-color: mat-color($primary, 100);
+  }
+
+  .vm-btn-active{
+    background-color: #5485bc45;
+  }
+  .vm-color-primary-dark{
+    color: mat-color($primary, 900) !important;
+  }
+  .vm-color-warn{
+    color: mat-color($warn) !important;
+  }
+  .vm-backdround-light-warn{
+    background-color: mat-color($warn,200) !important;
+  }
+  .timepicker {
+
+    .timepicker__header {
+      background-color: mat-color($primary) !important;
+    }
+
+    .clock-face__clock-hand {
+      background-color: mat-color($primary) !important;
+
+      &::after {
+        background-color: mat-color($primary) !important;
+      }
+
+      &::before {
+        border-color: mat-color($primary) !important;
+      }
+    }
+
+    .clock-face__number {
+      > span.active {
+        background-color: mat-color($primary) !important;
+      }
+    }
+
+    button:not(.timepicker-dial__item) {
+      color: mat-color($primary) !important;
+    }
+  }
+}
