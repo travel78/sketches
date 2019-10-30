@@ -1,4 +1,4 @@
-private getBase64Obs(file): Observable<any> {
+ getBase64Obs(file): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);

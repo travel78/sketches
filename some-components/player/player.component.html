@@ -1,0 +1,80 @@
+<mat-toolbar class="player-wrapper fx fx-v-center fx-between">
+  <div class="info" *ngIf="isNotHandset$ | async">
+    <div class="fx" *ngIf="version">
+      <div class="likes fx fx-col">
+        <button mat-icon-button class="iconsize-30" (click)="onLike()">
+          <mat-icon [color]="songs[songIndex].liked===1?'primary':null">thumb_up</mat-icon>
+        </button>
+
+        <button mat-icon-button class="iconsize-30" (click)="onUnlike()">
+          <mat-icon [color]="songs[songIndex].liked===-1?'primary':null">thumb_down</mat-icon>
+        </button>
+      </div>
+      <div class="name">
+        <h4 [matTooltip]="songs[songIndex]?.fullname">{{songs[songIndex]?.fullname}}</h4>
+        <div class="mat-caption text-muted">{{version?.version}}</div>
+      </div>
+    </div>
+    <!--    <span *ngIf="!version">{{'player.noMusic'| translate}}</span>-->
+  </div>
+
+  <div class="center fx fx-v-center">
+    <div class="center_controls">
+      <button mat-icon-button (click)="onPreviouse()">
+        <mat-icon>skip_previous</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onPlayPause()" tabIndex="-1">
+        <mat-icon class="iconsize-40"
+                  [color]="songs.length>0?'primary':null">{{isPlaying() ? 'pause_circle_outline' : 'play_circle_outline'}}</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="onNext()">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+    </div>
+
+    <div #waves class="waves"  *ngIf="isNotHandset$ | async">
+      <div class="full-wave pos-full"
+           [style.background-image]="sprite">
+      </div>
+      <div class="inner mat-card" [style.width.%]="getWidth()"></div>
+      <div class="waves__loading pos-full" [style.width.%]="loadPercent">
+        <div class="ee" [style.width.px]="waves.offsetWidth"
+             [style.background-image]="sprite"
+        ></div>
+      </div>
+      <span class="current mat-caption">{{loadMin}}</span>
+      <span class="duration mat-caption">{{duration}}</span>
+      <div #seek class="pos-full" (click)="onSeek($event,seek)"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <button mat-icon-button (click)="shuffled = !shuffled; repeat = 0">
+      <mat-icon [color]="shuffled?'primary':null">shuffle</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="repeat = repeat > 1 ? 0 : repeat + 1; shuffled = false">
+      <mat-icon *ngIf="repeat === 0">repeat</mat-icon>
+      <mat-icon *ngIf="repeat === 1" color="primary">repeat_one</mat-icon>
+      <mat-icon *ngIf="repeat === 2" color="primary">repeat</mat-icon>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="volumeEl">
+      <mat-icon>{{volume === 0 ? 'volume_off' : 'volume_up'}}</mat-icon>
+    </button>
+    <mat-menu #volumeEl="matMenu" class="panel">
+      <mat-slider
+        class="volume"
+        [max]="1"
+        [min]="0"
+        [step]="0.05"
+        [value]="volume"
+        (valueChange)="onChangeVolume($event)"
+        [vertical]="true">
+      </mat-slider>
+    </mat-menu>
+    <button *ngIf="isNotHandset$ | async" mat-icon-button (click)="onAddToCrate()" class="sideshow" id="2">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

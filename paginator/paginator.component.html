@@ -1,0 +1,7 @@
+<ul class="fx" *ngIf="collectionSize > 0">
+  <li class="fx fx-center fx-v-center" (click)="changePageTo(1)" [class.li-active]="page === 1">1</li>
+  <li class="fx fx-center fx-v-center" *ngIf="showPrev" (click)="changePageTo(pages[0] - 1)">...</li>
+  <li class="fx fx-center fx-v-center" *ngFor="let i of pages" [class.li-active]="i === page" (click)="changePageTo(i)">{{i}}</li>
+  <li class="fx fx-center fx-v-center" *ngIf="showNext" (click)="changePageTo(pages[pages.length-1] + 1)">...</li>
+  <li class="fx fx-center fx-v-center" *ngIf="last" (click)="changePageTo(last)" [class.li-active]="last === page">{{last}}</li>
+</ul>

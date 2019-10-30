@@ -1,0 +1,35 @@
+<div class="form">
+  <p class="text-muted">{{'picture.info' | translate}}</p>
+  <div class="wrapper fx">
+    <div class="photo-wrapper">
+    <span class="user-photo"
+          [style.backgroundImage]="(userPhoto | async) ?'url('+ (userPhoto | async) +')':null"></span>
+    </div>
+    <div class="drop-zone-wrapper fx fx-col">
+      <h2>{{'picture.profile' | translate}}</h2>
+      <div class="drop-zone fx" armyDropZone
+           (hovered)="toggleHover($event, true)"
+           (dropped)="startUpload($event, false, true)"
+           [class.hovering]="isPictureHovering">
+        <div>
+          <div class="photo-preview mat-card">
+            <div [style.background-image]="getPicture()">
+            </div>
+          </div>
+        </div>
+        <div class="text-wrapper">
+          <p class="text-muted">{{'picture.dropInfo' | translate}}</p>
+          <button type="button" mat-stroked-button (click)="img.click()">
+            <mat-icon>cloud_upload</mat-icon>
+            {{'picture.chooseBtn' | translate}}
+            <input #img type="file" name="image" style="display:none;" (change)="startUpload($event, true, true)"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button mat-flat-button color="primary" [disabled]="!pictureToUpdate && !logoToUpdate"
+            (click)="onUpdate()">{{'picture.updateBtn' | translate}}</button>
+  </div>
+</div>

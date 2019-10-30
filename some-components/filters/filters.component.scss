@@ -1,0 +1,14 @@
+.filters{
+  padding: 20px;
+  width: 400px;
+  margin-bottom: 30px;
+  .mat-form-field{
+    width: 100%;
+    font-size: 13px;
+  }
+  .two-fields{
+    .mat-form-field{
+      width: 48%;
+    }
+  }
+}

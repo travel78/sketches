@@ -1,0 +1,54 @@
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.36);
+  max-height: 100vh;
+  z-index: 10000;
+  visibility: visible;
+
+  &.pos-back {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: unset;
+  }
+
+  .spinner {
+    height: 150px;
+    text-align: center;
+    font-size: 10px;
+
+    div {
+      background-color: #f44336;
+      height: 100%;
+      width: 20px;
+      margin: 0 5px;
+      display: inline-block;
+      animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    }
+
+    .rect2 {
+      animation-delay: -1.1s;
+    }
+
+    .rect3 {
+      animation-delay: -1.0s;
+    }
+
+    .rect4 {
+      animation-delay: -0.9s;
+    }
+
+    .rect5 {
+      animation-delay: -0.8s;
+    }
+
+  }
+
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% {
+      transform: scaleY(0.4);
+    }
+    20% {
+      transform: scaleY(1.0);
+    }
+  }
+}

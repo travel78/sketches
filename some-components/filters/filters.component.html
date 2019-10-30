@@ -1,0 +1,74 @@
+<form class="mat-elevation-z7 filters" [formGroup]="filterForm">
+  <div class="two-fields fx fx-between">
+    <mat-form-field appearance="outline">
+      <input formControlName="from" matInput [matDatepicker]="picker" placeholder="Початкова дата"
+             (click)="picker.open()"
+             (keydown)="false">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-label>Start date</mat-label>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input formControlName="to" matInput [matDatepicker]="picker2" placeholder="Кінцева дата" (click)="picker2.open()"
+             (keydown)="false">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+      <mat-label>End date</mat-label>
+    </mat-form-field>
+  </div>
+  <mat-form-field *ngIf="showStatus" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input  matInput formControlName="email">
+    <button mat-button *ngIf="filterForm.get('email').value" matSuffix mat-icon-button aria-label="Clear" (click)="clearEmail()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Type</mat-label>
+    <mat-select formControlName="type">
+      <mat-option [value]="null">
+        All
+      </mat-option>
+      <mat-option *ngFor="let type of filters?.types" [value]="type.id">
+        {{type.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Subtype</mat-label>
+    <mat-select formControlName="subtype">
+      <mat-option [value]="null">
+        All
+      </mat-option>
+      <mat-option *ngFor="let subtype of subtypes" [value]="subtype.id">
+        {{subtype.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Site</mat-label>
+    <mat-select formControlName="site">
+      <mat-option [value]="null">
+        All
+      </mat-option>
+      <mat-option *ngFor="let site of filters?.sites" [value]="site">
+        {{site}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field  *ngIf="showStatus" appearance="outline">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="processed">
+      <mat-option [value]="null">
+        All
+      </mat-option>
+      <mat-option value="ok">
+        Processed
+      </mat-option>
+      <mat-option value="no">
+        Not processed
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onFilterApply()">SUBMIT</button>
+</form>

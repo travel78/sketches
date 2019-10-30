@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="680e3c52-a7b0-4711-b56f-452b3f830242" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/converters/fileToBase64Obs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http-interceptor/api.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http-interceptor/interceptor.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http-interceptor/token.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mat-theming/custom-theme-1.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mat-theming/own-components.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="680e3c52-a7b0-4711-b56f-452b3f830242" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +12,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings/proxy.conf.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +33,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/http-interceptor/api.service.ts" />
         <option value="$PROJECT_DIR$/converters/fileToBase64Obs.ts" />
+        <option value="$PROJECT_DIR$/settings/proxy.conf.json" />
       </list>
     </option>
   </component>
@@ -52,11 +54,6 @@
               <item name="sketches" type="b2602c69:ProjectViewProjectNode" />
               <item name="sketches" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sketches" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sketches" type="462c0819:PsiDirectoryNode" />
-              <item name="converters" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -73,6 +70,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/settings" />
       <recent name="$PROJECT_DIR$/mat-theming" />
       <recent name="$PROJECT_DIR$/http-interceptor" />
     </key>
@@ -99,23 +97,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547211522335</updated>
-      <workItem from="1547211523507" duration="736000" />
+      <workItem from="1547211523507" duration="1344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="736000" />
+    <option name="totallyTimeSpent" value="1344000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="7" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32937366" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -173,6 +171,13 @@
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/proxy.conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>

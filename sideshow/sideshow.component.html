@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="window-wrapper" #hole>
+    <div class="window">
+      <div class="shadow left"></div>
+      <div class="shadow top"></div>
+      <div class="shadow right"></div>
+      <div class="shadow bottom"></div>
+      <span class="arrow left-top" *ngIf="corner === 1">&#8600;</span>
+      <span class="arrow left-bottom"  *ngIf="corner === 4">&#8599;</span>
+      <span class="arrow right-bottom"  *ngIf="corner === 3">&#8598;</span>
+      <span class="arrow right-top"  *ngIf="corner === 2">&#8601;</span>
+      <div class="info fx fx-col fx-between" #info>
+        <p>{{('sideshow.step-' + (1 + currentSlideIndex)) | translate}}</p>
+
+        <div class="footer">
+          <div class="fx fx-between">
+            <button mat-flat-button (click)="onClose()">{{'sideshow.close' | translate}}</button>
+            <button mat-flat-button color="primary" (click)="onShowNext()" *ngIf="currentSlideIndex !== 2">{{'sideshow.next' | translate}}</button>
+          </div>
+          <mat-checkbox (change)="onCheck($event)" class="do-not-show">{{'sideshow.hide' | translate}}</mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
