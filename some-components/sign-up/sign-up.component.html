@@ -1,0 +1,38 @@
+<div class="auth-wrapper wrapper">
+  <mat-icon class="close" (click)="dialogRef.close()">close</mat-icon>
+  <h3 class="mat-display-1 login-title">Реєстрація</h3>
+  <form [formGroup]="signUpForm">
+    <mat-form-field appearance="outline">
+      <input  matInput placeholder="+380✱✱✱✱✱✱✱✱✱" formControlName="username" autocomplete="off" type="text"
+              (keypress)="onTelClick($event)" (blur)="onTelBlur()" (focus)="onTelFocus()">
+      <mat-label>Номер телефону</mat-label>
+      <mat-error *ngIf="signUpForm.get('username').invalid && signUpForm.get('username').errors.required">Це обовязкове поле</mat-error>
+      <mat-error *ngIf="signUpForm.get('username').invalid && signUpForm.get('username').errors.pattern">Номер заповнений не повністю</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="pass">
+      <input matInput placeholder="Введіть пароль" formControlName="password"  [type]="passHidden?'password':'text'">
+      <mat-icon matSuffix *ngIf="passHidden" (click)="passHidden = !passHidden">visibility</mat-icon>
+      <mat-icon matSuffix *ngIf="!passHidden" (click)="passHidden = !passHidden">visibility_off</mat-icon>
+      <mat-label>Введіть пароль</mat-label>
+      <mat-error *ngIf="signUpForm.get('password').invalid && signUpForm.get('password').errors.required">Це обовязкове поле</mat-error>
+      <mat-error *ngIf="signUpForm.get('password').invalid && signUpForm.get('password').errors.minlength">Пароль має містити мінімум 6 знаків</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="pass">
+      <input matInput placeholder="Повторіть пароль" formControlName="confirmPassword"  [type]="repeatPassHidden?'password':'text'" (change)="confirmPasswordChange()">
+      <mat-icon matSuffix *ngIf="repeatPassHidden" (click)="repeatPassHidden = !repeatPassHidden">visibility</mat-icon>
+      <mat-icon matSuffix *ngIf="!repeatPassHidden" (click)="repeatPassHidden = !repeatPassHidden">visibility_off</mat-icon>
+      <mat-label>Повторіть пароль</mat-label>
+      <mat-error *ngIf="signUpForm.get('confirmPassword').invalid && signUpForm.get('confirmPassword').errors.required">Це обовязкове поле</mat-error>
+      <mat-error *ngIf="signUpForm.get('confirmPassword').invalid  && !signUpForm.get('confirmPassword').errors.required && confirmPasswordInvalid">Паролі не співпадають</mat-error>
+    </mat-form-field>
+    <button class="submit-btn" mat-flat-button color="primary"
+            [disabled]="!signUpForm.valid" (click)="onSubmit()">
+      Надіслати
+    </button>
+  </form>
+  <mat-divider></mat-divider>
+  <footer class="fx fx-v-center fx-center">
+    <span>Вже зареєстровані?</span>
+    <a (click)="dialogRef.close({redirect:'login'})">Увійти</a>
+  </footer>
+</div>

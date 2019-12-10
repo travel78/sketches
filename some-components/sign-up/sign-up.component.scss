@@ -1,0 +1,40 @@
+.wrapper {
+
+  .login-title {
+    text-align: center;
+    margin: 35px 0 0;
+  }
+
+  form {
+    margin: 33px 0 40px;
+
+    .mat-form-field {
+      width: 100%;
+
+      &.pass{
+        .mat-icon{
+          cursor: pointer;
+        }
+      }
+    }
+
+    button {
+      margin-top: 28px;
+    }
+  }
+
+  footer {
+    height: 43px;
+    font-size: 12px;
+
+    span {
+      opacity: 0.6;
+    }
+
+    a {
+      margin-left: 8px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
